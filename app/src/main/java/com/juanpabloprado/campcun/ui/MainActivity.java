@@ -1,6 +1,7 @@
 package com.juanpabloprado.campcun.ui;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -19,7 +20,7 @@ import butterknife.InjectView;
 import butterknife.OnClick;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
 
     @InjectView(R.id.recyclerView) RecyclerView mRecyclerView;
 
@@ -30,12 +31,12 @@ public class MainActivity extends ActionBarActivity {
         ButterKnife.inject(this);
 
         List<Todo> todoCampings = new ArrayList<>();
-        String[] todos = {"Casa campana", "Linterna", "Viveres", "Agua"};
+        String[] todos =
+                {"Casa campana", "Linterna", "Repelente de insectos", "Kit de primeros auxilios", "Agua", "Cocina (Cubiertos/Cacerolas)"};
         for (String todo : todos) {
             todoCampings.add(new Todo(todo, false));
         }
 
-        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, todos);
         TodoAdapter adapter = new TodoAdapter(this, todoCampings);
         mRecyclerView.setAdapter(adapter);
 
@@ -47,12 +48,14 @@ public class MainActivity extends ActionBarActivity {
 
     @OnClick(R.id.mapButton)
     public void startMapActivity(View view) {
-        Toast.makeText(this, "Map", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(this, MapActivity.class);
+        startActivity(intent);
     }
 
     @OnClick (R.id.direcotoryButton)
     public void startDirectoryActivity(View view) {
-        Toast.makeText(this, "Directory", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(this, DirectoryActivity.class);
+        startActivity(intent);
     }
 
     @OnClick (R.id.todoButton)
