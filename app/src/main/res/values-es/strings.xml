@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CampCun</string>
+    <string name="action_settings">Opciones</string>
+    <string name="title_activity_map">Mapa</string>
+    <string name="title_activity_directory">Sitios para acampar</string>
+    <string name="map_button_text">Mapa</string>
+    <string name="directory_button_text">Directorio</string>
+    <string name="todo_button_text">Listo</string>
+</resources>

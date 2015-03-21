@@ -46,7 +46,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Map"
+            android:text="@string/map_button_text"
             android:id="@+id/mapButton"
             android:layout_weight="1"
             android:background="#40ffffff"
@@ -55,7 +55,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Directory"
+            android:text="@string/directory_button_text"
             android:id="@+id/direcotoryButton"
             android:layout_weight="1"
             android:background="#40ffffff"
@@ -64,7 +64,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ready"
+            android:text="@string/todo_button_text"
             android:id="@+id/todoButton"
             android:layout_weight="1"
             android:background="#40ffffff"

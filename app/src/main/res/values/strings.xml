@@ -1,8 +1,9 @@
 <resources>
     <string name="app_name">CampCun</string>
-
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_map">MapActivity</string>
-    <string name="title_activity_directory">DirectoryActivity</string>
+    <string name="title_activity_map">Map</string>
+    <string name="title_activity_directory">Campsites</string>
+    <string name="map_button_text">Map</string>
+    <string name="directory_button_text">Directory</string>
+    <string name="todo_button_text">Ready</string>
 </resources>
