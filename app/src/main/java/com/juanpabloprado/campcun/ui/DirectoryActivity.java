@@ -1,11 +1,11 @@
 package com.juanpabloprado.campcun.ui;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.View;
 
 import com.juanpabloprado.campcun.R;
 import com.juanpabloprado.campcun.adapters.PlaceAdapter;
@@ -18,6 +18,7 @@ import java.util.Map;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import butterknife.OnClick;
 
 public class DirectoryActivity extends ActionBarActivity {
 
@@ -48,5 +49,16 @@ public class DirectoryActivity extends ActionBarActivity {
         mRecyclerView.setHasFixedSize(true);
     }
 
+    @OnClick(R.id.todoButton)
+    public void startMainActivity(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.mapButton)
+    public void startMapActivity(View view) {
+        Intent intent = new Intent(this, MapActivity.class);
+        startActivity(intent);
+    }
 
 }
