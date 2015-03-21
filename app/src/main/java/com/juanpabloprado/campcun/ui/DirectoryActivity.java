@@ -32,7 +32,7 @@ public class DirectoryActivity extends ActionBarActivity {
         ButterKnife.inject(this);
 
         Map<String, Double> placePrices = new HashMap<>();
-        placePrices.put("hol-box", 50.2);
+        placePrices.put("Hol-box", 50.2);
         placePrices.put("Isla blanca", 0.0);
         placePrices.put("Akumal", null);
 
