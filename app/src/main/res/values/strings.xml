@@ -7,4 +7,7 @@
     <string name="directory_button_text">Directory</string>
     <string name="todo_button_text">Ready</string>
     <string name="ready_to_camp">Ready to camp?</string>
+    <string name="error_title">Oops! Sorry!</string>
+    <string name="error_message">There was an error. Please try again.</string>
+    <string name="error_ok_button_text">OK</string>
 </resources>
