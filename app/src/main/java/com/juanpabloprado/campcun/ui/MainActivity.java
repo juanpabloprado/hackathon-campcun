@@ -1,6 +1,9 @@
 package com.juanpabloprado.campcun.ui;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -44,6 +47,26 @@ public class MainActivity extends ActionBarActivity {
         mRecyclerView.setLayoutManager(layoutManager);
 
         mRecyclerView.setHasFixedSize(true);
+    }
+
+    private void getTodos() {
+        String apiKey = "2Q3xsKtpHe";
+        String todosUrl = "http://tu-desarrollo.com/apps/camp-cun-api/todos/json?apiKey=" + apiKey;
+        if (isNetworkAvailable()) {
+
+        }
+    }
+
+    private boolean isNetworkAvailable() {
+        ConnectivityManager manager = (ConnectivityManager)
+                getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = manager.getActiveNetworkInfo();
+        boolean isAvailable = false;
+        if (networkInfo != null && networkInfo.isConnected()) {
+            isAvailable = true;
+        }
+
+        return isAvailable;
     }
 
     @OnClick(R.id.mapButton)
