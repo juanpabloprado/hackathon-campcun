@@ -26,7 +26,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Listo para acampar?"
+        android:text="@string/ready_to_camp"
         android:id="@+id/readyLabel"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"

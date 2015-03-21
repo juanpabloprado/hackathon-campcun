@@ -7,4 +7,5 @@
     <string name="map_button_text">Mapa</string>
     <string name="directory_button_text">Directorio</string>
     <string name="todo_button_text">Listo</string>
+    <string name="ready_to_camp">Listo para acampar?</string>
 </resources>
