@@ -9,5 +9,5 @@
                 android:background="#9CADCE"
                 tools:context="com.juanpabloprado.campcun.ui.MapActivity">
 
-
+    <include layout="@layout/tabs"/>
 </RelativeLayout>
