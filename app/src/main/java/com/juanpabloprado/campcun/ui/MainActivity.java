@@ -36,8 +36,9 @@ import butterknife.OnClick;
 
 public class MainActivity extends ActionBarActivity {
 
-    private static final String TAG = MainActivity.class.getSimpleName();
     @InjectView(R.id.recyclerView) RecyclerView mRecyclerView;
+
+    private static final String TAG = MainActivity.class.getSimpleName();
     List<Todo> mTodos = new ArrayList<>();
 
     @Override
@@ -45,26 +46,17 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.inject(this);
-
-        List<Todo> todoCampings = new ArrayList<>();
-        String[] todos =
-                {"Casa campana", "Linterna", "Repelente de insectos", "Kit de primeros auxilios", "Agua", "Cocina (Cubiertos/Cacerolas)"};
-        for (String todo : todos) {
-            todoCampings.add(new Todo(todo, false));
-        }
-        //getTodos();
-        Log.i(TAG, mTodos.size() + "");
-
-        TodoAdapter adapter = new TodoAdapter(this, todoCampings);
-        mRecyclerView.setAdapter(adapter);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(layoutManager);
-        mRecyclerView.setHasFixedSize(true);
+        getTodos();
+        Log.i(TAG, mTodos.size() + "");
+
+
     }
 
     private void getTodos() {
         String apiKey = "2Q3xsKtpHe";
-        String todosUrl = "http://tu-desarrollo.com/apps/camp-cun-api/todos/json?apiKey=" + apiKey;
+        String todosUrl = "http://campcun.com/api/todos/json?apiKey=" + apiKey;
         if (isNetworkAvailable()) {
             OkHttpClient client = new OkHttpClient();
             Request request = new Request.Builder()
@@ -86,6 +78,11 @@ public class MainActivity extends ActionBarActivity {
                         Log.v(TAG, jsonData);
                         if (response.isSuccessful()) {
                             mTodos = parseTodos(jsonData);
+
+                            TodoAdapter adapter = new TodoAdapter(MainActivity.this, mTodos);
+                            mRecyclerView.setAdapter(adapter);
+                            mRecyclerView.setHasFixedSize(true);
+
                         } else {
                             alertUserAboutError();
                         }
